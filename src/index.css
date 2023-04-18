@@ -22,3 +22,19 @@ form {
 #add-todo {
   display: none;
 }
+
+.draggable {
+  opacity: 0.3;
+  transition: all 100ms ease-in;
+}
+
+.hovered {
+  border: 1px dashed blue !important;
+}
+
+[draggable="true"] {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}

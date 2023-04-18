@@ -24,6 +24,7 @@ export const ButtonText = styled.button`
   color: ${(props) => props.theme.variant.quaternary};
   cursor: pointer;
   transition: all 0.1s ease-in;
+  font-family: "Josefin Sans", sans-serif;
   &.active {
     color: ${templateTheme.colors.blue[0]};
     font-weight: 700;

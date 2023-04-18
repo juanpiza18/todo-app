@@ -11,7 +11,7 @@ export const FilterContainer = styled.div`
   font-size: 1rem;
   & span {
     color: ${(props) => props.theme.variant.quaternary};
-    font-weight: 400;
+    font-size: 1rem;
   }
 `;
 
@@ -56,12 +56,5 @@ export const TodoListSection = styled.section`
 
   & ul {
     list-style: none;
-    & li {
-      display: flex;
-      align-items: center;
-      padding: 2rem;
-      gap: 2rem;
-      border-bottom: ${(props) => props.theme.border};
-    }
   }
 `;

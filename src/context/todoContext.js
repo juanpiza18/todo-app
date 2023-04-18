@@ -13,6 +13,7 @@ const TodoContext = React.createContext({
   filterTodoList: (status) => {},
   filterCompleteItemsInTodoList: () => [],
   filterActiveItemsInTodoList: () => [],
+  dragAndDropSetTodosOrder: (list) => {},
 });
 
 export default TodoContext;

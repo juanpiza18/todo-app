@@ -7,15 +7,27 @@ const defaultTodos = [
     id: uuidv4(),
     content: "Complete online JavaScript course",
     completed: true,
+    order: 1,
   },
-  { id: uuidv4(), content: "Jog around the park 3x", completed: false },
-  { id: uuidv4(), content: "10 minutes meditation", completed: false },
-  { id: uuidv4(), content: "Read 1 hour", completed: false },
-  { id: uuidv4(), content: "Pick up groceries", completed: false },
+  {
+    id: uuidv4(),
+    content: "Jog around the park 3x",
+    completed: false,
+    order: 2,
+  },
+  {
+    id: uuidv4(),
+    content: "10 minutes meditation",
+    completed: false,
+    order: 3,
+  },
+  { id: uuidv4(), content: "Read 1 hour", completed: false, order: 4 },
+  { id: uuidv4(), content: "Pick up groceries", completed: false, order: 5 },
   {
     id: uuidv4(),
     content: "Complete Todo App on Frontend Mentor",
     completed: false,
+    order: 6,
   },
 ];
 
@@ -32,8 +44,21 @@ export const TodoProvider = ({ children }) => {
     setTodos((prev) => [item, ...prev]);
   };
 
+  const dragAndDropSetTodosOrder = (todosNewList) => {
+    const todos = todosNewList.map((todo, index) => ({
+      ...todo,
+      order: index + 1,
+    }));
+    setTodos(todos);
+  };
+
   const removeTodo = (id) => {
-    const newList = todos.filter((todo) => todo.id !== id);
+    const newList = todos
+      .filter((todo) => todo.id !== id)
+      .map((todo, index) => ({
+        ...todo,
+        order: index + 1,
+      }));
     setTodos(newList);
   };
 
@@ -45,7 +70,12 @@ export const TodoProvider = ({ children }) => {
   };
 
   const clearTodoCompleted = () => {
-    const newList = todos.filter((todo) => !todo.completed);
+    const newList = todos
+      .filter((todo) => !todo.completed)
+      .map((todo, index) => ({
+        ...todo,
+        order: index + 1,
+      }));
     setTodos(newList);
   };
 
@@ -80,6 +110,7 @@ export const TodoProvider = ({ children }) => {
         filterTodoList: filterTodoList,
         filterActiveItemsInTodoList: filterActiveItemsInTodoList,
         filterCompleteItemsInTodoList: filterCompleteItemsInTodoList,
+        dragAndDropSetTodosOrder: dragAndDropSetTodosOrder,
       }}
     >
       {children}

@@ -14,6 +14,7 @@ export const TextContent = styled.p`
         : templateTheme.colors.gray[500]};
     text-decoration: line-through;
   }
+  border: none !important;
 `;
 
 export const CheckboxBoxContainer = styled.div`
