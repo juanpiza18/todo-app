@@ -24,7 +24,7 @@ form {
 }
 
 .draggable {
-  opacity: 0.3;
+  visibility: hidden;
   transition: all 100ms ease-in;
 }
 
@@ -32,9 +32,9 @@ form {
   border: 1px dashed blue !important;
 }
 
-[draggable="true"] {
+/* [draggable="true"] {
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
-}
+} */

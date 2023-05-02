@@ -9,7 +9,6 @@ export const ImageContainer = styled.div`
   padding: 5rem 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background-repeat: no-repeat;
   background-position: top center;

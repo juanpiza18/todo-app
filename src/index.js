@@ -7,11 +7,9 @@ import { TodoProvider } from "./context/todoProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <TodoProvider>
-      <App />
-    </TodoProvider>
-  </React.StrictMode>
+  <TodoProvider>
+    <App />
+  </TodoProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

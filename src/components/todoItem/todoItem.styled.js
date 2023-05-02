@@ -43,3 +43,11 @@ export const Checkbox = styled.span`
   &.completed {
     background-image:${templateTheme.gradients.blueToPurple};
 `;
+
+export const TodoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+  border-bottom: ${(props) => props.theme.border};
+`;

@@ -8,12 +8,13 @@ import {
   Checkbox,
   CheckboxInput,
   TextContent,
+  TodoContainer,
 } from "./todoItem.styled.js";
 
 const TodoItem = ({ id, content, completed }) => {
   const { removeTodo, changeTodoStatus } = useContext(TodoContext);
   return (
-    <>
+    <TodoContainer>
       <CheckboxBoxContainer>
         <Checkbox
           className={completed ? "completed" : ""}
@@ -35,7 +36,7 @@ const TodoItem = ({ id, content, completed }) => {
       >
         <img src={Cross} alt="Delete Todo Icon" />
       </ButtonIcon>
-    </>
+    </TodoContainer>
   );
 };
 
